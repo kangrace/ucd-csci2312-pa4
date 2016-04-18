@@ -17,7 +17,7 @@ namespace Gaming
 
     void Game::populate()
     {
-        //populaet();
+        //populate();
     }
 
     Game::Game() : __grid(MIN_WIDTH * MIN_HEIGHT, nullptr)
