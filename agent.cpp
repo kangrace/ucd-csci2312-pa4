@@ -22,35 +22,18 @@ namespace Gaming
 
     Piece& Agent::operator*(Piece &other)
     {
-        return other.interact(this);
+        return *this;
     }
 
     Piece& Agent::interact(Agent *other)
     {
-        if (this->getEnergy() == other->getEnergy())
-        {
-            this->finish();
-            other->finish();
-        }
-
-        else if (this->getEnergy() > other->getEnergy())
-        {
-            this->addEnergy(-(other->getEnergy()));
-            other->finish();
-        }
-
-        else
-        {
-            other->addEnergy(-(this->getEnergy()));
-            this->finish();
-        }
-
+        other->interact(this);
         return *this;
     }
 
     Piece& Agent::interact(Resource *other)
     {
-        other -> interact(this);
+        other->interact(this);
         return *this;
     }
 

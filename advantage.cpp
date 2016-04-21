@@ -26,7 +26,9 @@ namespace Gaming
 
     double Advantage::consume()
     {
+        double capacity = getCapacity();
+        __capacity = 0;
         finish();
-        return getCapacity();
+        return capacity;
     }
 }

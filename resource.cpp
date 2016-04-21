@@ -7,7 +7,7 @@ namespace Gaming
 
     Resource::Resource(const Game &g, const Position &p, double capacity) :Piece(g, p)
     {
-        this -> __capacity = __capacity;
+        __capacity = capacity;
     }
 
     Resource::~Resource()
@@ -16,14 +16,15 @@ namespace Gaming
 
     double Resource::consume()
     {
-        // consume()
-        double consume = 10.0;
-        return consume;
+        double capacity = getCapacity();
+        __capacity = 0;
+        finish();
+        return capacity;
     }
 
     void Resource::age()
     {
-        if(__capacity < 0.000001)
+        if(__capacity < 0.001)
         {
             __capacity = 0.0;
         }
